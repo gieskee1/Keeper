@@ -1,0 +1,55 @@
+
+ <div class="center title"> {{machine.title}}</div>
+ <div class="center subtitle">{{machine.manfr}} {{machine.year}}</div>
+
+<mat-divider style="margin:15px;"></mat-divider>
+
+
+ <div class="center label">New Issue</div>
+
+<br>
+
+ <div class="center padding">
+ <form class="issueform" (ngSubmit)="onSubmit($event)" #eventDetails="ngForm">
+
+   <mat-form-field>
+    <mat-label>Priority</mat-label>
+    <mat-select [(value)]="newIssue.priority">
+      <mat-option value="Critical">Critical</mat-option>
+      <mat-option value="High">High</mat-option>
+      <mat-option value="Medium">Medium</mat-option>
+      <mat-option value="Low">Low</mat-option>
+    </mat-select>
+   </mat-form-field>
+<br>
+   <mat-form-field>
+    <mat-label>Issue</mat-label>
+    <input matInput placeholder="" [(ngModel)]="newIssue.issue" name="issue">
+   </mat-form-field>
+<br>
+   <mat-form-field>
+  <mat-label>Notes</mat-label>
+  <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            name="notes"
+            [(ngModel)]="newIssue.notes" ></textarea>
+  </mat-form-field>
+
+<br>
+
+  <mat-form-field>
+    <mat-label>Cost</mat-label>
+    <input matInput placeholder="" name="cost" [(ngModel)]="newIssue.cost" >
+  </mat-form-field>
+
+<br>
+
+<button mat-raised-button color="primary" type="submit" class="submit">Submit</button>
+
+ </form>
+
+</div>
+

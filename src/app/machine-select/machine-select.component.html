@@ -1,0 +1,5 @@
+<input matInput type="text" name="search" placeholder="Search" class="search-box" [(ngModel)]="inputTitle" (input)="inputChange()">
+
+<div *ngFor="let machine of machines | filterPipe:inputTitle">
+<button mat-stroked-button (click)="titleClick(machine)" class="title-btn" >{{machine.title}}</button>
+</div>

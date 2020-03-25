@@ -1,0 +1,42 @@
+@import '../app.component.scss';
+
+.title{
+  font-size: 36px;
+  line-height: 36px;
+  color: #839399;
+  margin-top: 25px;
+}
+
+.subtitle {
+  color: #839399;
+
+}
+
+.label{
+  font-size: 25px;
+  line-height: 25px;
+  color: #839399;
+  margin: 20px;
+}
+
+form{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.padding {
+  padding: 0 50px 0 50px;
+}
+
+.submit{
+  width: 100%;
+  margin-top: 25px;
+}
+
+
+
