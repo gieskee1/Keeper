@@ -1,15 +1,33 @@
-
+<div *ngIf="machine">
+  <i class="far fa-times-circle"></i>
  <div class="center title"> {{machine.title}}</div>
  <div class="center subtitle">{{machine.manfr}} {{machine.year}}</div>
-
+</div>
+<div *ngIf="!machine">
+<div class="center padding" style="margin-top:25px;">
+    <mat-form-field>
+    <input matInput
+           placeholder="Search"
+           [matAutocomplete]="auto"
+           [formControl]="machineCtrl">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="getSelected($event.option.value)">
+      <mat-option *ngFor="let m of filteredMachines | async" [value]="m">
+        <span>{{m.title}}</span> |
+        <small>{{m.manfr}} {{m.year}}</small>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
+</div>
 <mat-divider style="margin:15px;"></mat-divider>
 
 
- <div class="center label">New Issue</div>
+ <div  *ngIf="machine" class="
+ center label">New Issue</div>
 
 <br>
 
- <div class="center padding">
+ <div class="center padding"  *ngIf="machine">
  <form class="issueform" (ngSubmit)="onSubmit($event)" #eventDetails="ngForm">
 
    <mat-form-field>
