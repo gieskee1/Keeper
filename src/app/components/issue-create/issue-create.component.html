@@ -1,6 +1,8 @@
-<div *ngIf="machine">
-  <i class="far fa-times-circle"></i>
- <div class="center title"> {{machine.title}}</div>
+
+
+<div *ngIf="machine" >
+    <fa-icon [icon]="faPenAlt" class="icon" (click)="iconClick()"></fa-icon>
+ <div class="center title"> {{machine.title}} </div>
  <div class="center subtitle">{{machine.manfr}} {{machine.year}}</div>
 </div>
 <div *ngIf="!machine">

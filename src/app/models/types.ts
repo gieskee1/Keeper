@@ -2,6 +2,7 @@ export type MachineType = {
   title: string;
   manfr: string;
   year: string;
+  // detail: string;
 }
 
 export type IssueType = {

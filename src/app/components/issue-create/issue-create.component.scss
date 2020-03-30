@@ -1,10 +1,19 @@
-@import '../app.component.scss';
+@import '../../app.component';
+//topper{
+//  margin-right: -15px;
+//}
+.icon{
+  color: #839399;
+  float: right;
+  margin-right: 15px;
+}
 
 .title{
   font-size: 36px;
   line-height: 36px;
   color: #839399;
   margin-top: 25px;
+  margin-left: 35px;
 }
 
 .subtitle {

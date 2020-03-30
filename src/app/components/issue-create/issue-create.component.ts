@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {TransferService} from "../services/transfer.service";
-import {IssueType, MachineType} from "../models/types";
+import {TransferService} from "../../services/transfer.service";
+import {IssueType, MachineType} from "../../models/types";
 import {CdkTextareaAutosize} from "@angular/cdk/text-field";
 import {FormControl} from "@angular/forms";
 import {Observable} from "rxjs/index";
 import {map, startWith} from "rxjs/internal/operators";
-import {element} from "protractor";
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,9 +14,10 @@ import {element} from "protractor";
   styleUrls: ['./issue-create.component.scss']
 })
 export class IssueCreateComponent implements OnInit {
+  faPenAlt = faEdit;
   machine: MachineType;
 
-  machines: MachineType[] = [{title:"Black Knight",manfr:"Williams",year:"1980"}, {title:"Ghostbusters",manfr:"Williams",year:"1980"}, {title:"Baffle Ball",manfr:"Williams",year:"1980"}, {title:"Taxi",manfr:"Williams",year:"1980"}, {title:"Twilight Zone",manfr:"Williams",year:"1980"},
+  machines: MachineType[] = [{title:"Black Knight",manfr:"Williams",year:"1980"}, {title:"Very Long Ghostbusters",manfr:"Williams",year:"1980"}, {title:"Baffle Ball",manfr:"Williams",year:"1980"}, {title:"Taxi",manfr:"Williams",year:"1980"}, {title:"Twilight Zone",manfr:"Williams",year:"1980"},
  {title:"Monster Bash",manfr:"Williams",year:"1980"}];
 
   newIssue: IssueType = {
@@ -54,9 +55,11 @@ export class IssueCreateComponent implements OnInit {
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
   ngOnInit(): void {
-    // this.machine = this.transferService.getMachine();
-    // this.newIssue.machine = this.machine;
-
+    let temp = this.transferService.getMachine();
+    if (temp) {
+      this.machine = temp;
+      this.newIssue.machine = this.machine;
+    }
   }
 
   onSubmit(event: any){
@@ -67,8 +70,11 @@ export class IssueCreateComponent implements OnInit {
     console.log(e);
     this.machine = e;
     this.newIssue.machine = e;
+    }
 
+  iconClick(){
+    this.machine = null;
+    this.machineCtrl.setValue(null);
   }
-
 
 }

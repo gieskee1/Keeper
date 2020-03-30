@@ -1,0 +1,32 @@
+
+ <div class="center label">New Machine</div>
+
+<mat-divider style="margin:15px;"></mat-divider>
+
+
+
+<div class="center padding" >
+ <form (ngSubmit)="onSubmit($event)" #eventDetails="ngForm">
+<br>
+   <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="" [(ngModel)]="machine.title" name="title">
+   </mat-form-field>
+<br>
+  <mat-form-field>
+    <mat-label>Manufacturer</mat-label>
+    <input matInput placeholder="" name="manfr" [(ngModel)]="machine.manfr" >
+  </mat-form-field>
+
+<br>
+
+   <mat-form-field>
+    <mat-label>Year</mat-label>
+    <input matInput placeholder="" name="year" [(ngModel)]="machine.year" >
+  </mat-form-field>
+
+<button mat-raised-button color="primary" type="submit" class="submit">Submit</button>
+
+ </form>
+
+</div>

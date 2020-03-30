@@ -1,6 +1,6 @@
 import {Component, Input,OnChanges, OnInit} from '@angular/core';
-import {MachineType} from "../models/types";
-import {TransferService} from "../services/transfer.service";
+import {MachineType} from "../../models/types";
+import {TransferService} from "../../services/transfer.service";
 import {Router} from "@angular/router";
 
 @Component({

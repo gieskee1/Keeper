@@ -12,6 +12,10 @@ export class TransferService {
     this.machine = data;
   }
 
+  peekMachine(){
+    return this.machine;
+  }
+
   getMachine(){
     let temp = this.machine;
     this.clearMachine();

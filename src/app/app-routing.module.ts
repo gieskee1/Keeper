@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MachineSelectComponent} from "./machine-select/machine-select.component";
-import {IssueCreateComponent} from "./issue-create/issue-create.component";
+import {MachineSelectComponent} from "./components/machine-select/machine-select.component";
+import {IssueCreateComponent} from "./components/issue-create/issue-create.component";
+import {NewMachineComponent} from "./components/new-machine/new-machine.component";
 
 
 const routes: Routes = [
-  { path: 'search', component: MachineSelectComponent},
+  { path: 'list', component: MachineSelectComponent},
   {path: 'newIssue', component: IssueCreateComponent},
-  {path: '',  redirectTo:'/search', pathMatch:'full'}
+  {path: 'newMachine', component: NewMachineComponent},
+  {path: '',  redirectTo:'/list', pathMatch:'full'}
 ];
 
 @NgModule({
